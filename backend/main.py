@@ -5,6 +5,7 @@ app = FastAPI()
 def root():
     return {"message": "Signal up and running :)"}
 
+#Just testing remove this if you want
 @app.get("/signals")
 def get_signals():
     return {
