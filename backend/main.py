@@ -9,7 +9,8 @@ def root():
 @app.get("/signals")
 def get_signals():
     return {
-        "signals": [
+        "signals": 
+        [
             {"id": 1, "title": "AI Agents trending", "score": 9.2},
             {"id": 2, "title": "Rust adoption rising", "score": 8.8}
         ]
