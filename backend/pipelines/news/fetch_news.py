@@ -76,7 +76,7 @@ def fetch_news():
 
             if story and story.get("title") and story.get("type") == "story":
                 news.append({
-                    "title": story["title"],          
+                    "title": story["title"].split(" - ")[0],          
                     "source": "Hacker News",             
                     "url": story.get("url", ""),         
                     "category": "tech"                   
