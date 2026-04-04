@@ -62,7 +62,7 @@ def fetch_news():
         response = requests.get(BASE_URL + category)
 
         if response.status_code == 200:
-            ids = response.json()[:20]
+            ids = response.json()[:15]
             allIds.extend(ids)
 
     allIds = list(set(allIds))
@@ -81,6 +81,10 @@ def fetch_news():
                     "url": story.get("url", ""),         
                     "category": "tech"                   
                 })
+
+    #################
+    #  GNEWS API 
+    #################
 
 
 
