@@ -11,6 +11,10 @@ BASE_URL = "https://hacker-news.firebaseio.com/v0"
 def fetch_news():
     news = []
 
+    #################
+    #  NEWS API 
+    #################
+
     #fetch newsapi tech related data
     techUrl = f"https://newsapi.org/v2/top-headlines?category=technology&pageSize=30&apiKey={NEWS_API_KEY}"
     techResponse = requests.get(techUrl)
@@ -41,46 +45,43 @@ def fetch_news():
                 "category": "business"
             })
 
-    return news
+    #################
+    #  HACKERNEWS API 
+    #################
 
-def fetch_hacker_news():
-    news = []
-
-    #endpoints
-    endpoints = [
+    categories = [
         "/topstories.json",
         "/newstories.json",
-        "/showstories.json",
         "/beststories.json",
-        "/askstories.json",
-        "/jobstories.json"
     ]
 
-    all_ids = []
+    allIds = []
 
-    #collect IDs from all endpoints
-    for endpoint in endpoints:
-        response = requests.get(BASE_URL + endpoint)
+    #collect IDs from all categories
+    for category in categories:
+        response = requests.get(BASE_URL + category)
 
         if response.status_code == 200:
-            ids = response.json()
-            all_ids.extend(ids[:20])  # limit per source
+            ids = response.json()[:20]
+            allIds.extend(ids)
 
-    # remove duplicates
-    all_ids = list(set(all_ids))
+    allIds = list(set(allIds))
 
-    #fetch item details
-    for story_id in all_ids:
-        storyResponse = requests.get(BASE_URL + f"/item/{story_id}.json")
+    #fetch each story
+    for storyId in allIds:
+        storyResponse = requests.get(BASE_URL + f"/item/{storyId}.json")
 
         if storyResponse.status_code == 200:
-            item = storyResponse.json()
+            story = storyResponse.json()
 
-            if item and item.get("title") and item.get("type") == "story":
+            if story and story.get("title") and story.get("type") == "story":
                 news.append({
-                    "title": item["title"],          
+                    "title": story["title"],          
                     "source": "Hacker News",             
-                    "url": item.get("url", ""),         
+                    "url": story.get("url", ""),         
                     "category": "tech"                   
                 })
+
+
+
     return news
