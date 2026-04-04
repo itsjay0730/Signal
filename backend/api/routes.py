@@ -13,3 +13,7 @@ def get_signals():
     return {"signals": []}
 
 #test the endpoint
+@router.get("/test-hn")
+def test_hn():
+    data = fetch_hacker_news()
+    return {"count": len(data), "data": data[:5]}
