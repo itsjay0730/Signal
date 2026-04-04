@@ -19,8 +19,7 @@ def fetch_news():
         "business"
     ]
     for category in newsCategories:
-        url = f"https://newsapi.org/v2/top-headlines?category={category}&pageSize=30&apiKey={NEWS_API_KEY}"
-        newsResponse = requests.get(url)
+        newsResponse = requests.get(f"https://newsapi.org/v2/top-headlines?category={category}&pageSize=30&apiKey={NEWS_API_KEY}")
 
         if newsResponse.status_code == 200:
             articles = newsResponse.json()["articles"]
