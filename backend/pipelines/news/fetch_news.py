@@ -14,40 +14,30 @@ def fetch_news():
     #  NEWS API 
     ##################################
 
-    #fetch newsapi tech related data
-    techUrl = f"https://newsapi.org/v2/top-headlines?category=technology&pageSize=30&apiKey={NEWS_API_KEY}"
-    techResponse = requests.get(techUrl)
+    newsCategories = [
+        "technology",
+        "business"
+    ]
+    for category in newsCategories:
+        url = f"https://newsapi.org/v2/top-headlines?category={category}&pageSize=30&apiKey={NEWS_API_KEY}"
+        newsResponse = requests.get(url)
 
-    if techResponse.status_code == 200:
-        articles = techResponse.json()["articles"]
+        if newsResponse.status_code == 200:
+            articles = newsResponse.json()["articles"]
 
-        for article in articles:
-            news.append({
-                "title": article["title"].split(" - ")[0],
-                "source": article["source"]["name"],
-                "url": article["url"],
-                "category": "technology"
-            })
+            for article in articles:
+                news.append({
+                    "title": article["title"].split(" - ")[0],
+                    "source": article["source"]["name"],
+                    "url": article["url"],
+                    "category": category
+                })
 
-    #fetch newsapi business related data
-    businessUrl = f"https://newsapi.org/v2/top-headlines?category=business&pageSize=30&apiKey={NEWS_API_KEY}"
-    businessResponse = requests.get(businessUrl)
-
-    if businessResponse.status_code == 200:
-        articles = businessResponse.json()["articles"]
-
-        for article in articles:
-            news.append({
-                "title": article["title"].split(" - ")[0],
-                "source": article["source"]["name"],
-                "url": article["url"],
-                "category": "business"
-            })
 
     ##################################
     #  HACKERNEWS API 
     ##################################
-    
+
     hackerCategories = [
         "/topstories.json",
         "/newstories.json",
