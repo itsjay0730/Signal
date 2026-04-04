@@ -7,6 +7,7 @@ load_dotenv()
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 #for hacker news fetch
 BASE_URL = "https://hacker-news.firebaseio.com/v0"
+
 def fetch_news():
     news = []
 
