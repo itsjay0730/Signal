@@ -15,7 +15,6 @@ from pipelines.news.dedup import group_duplicates
 FETCH_INTERVAL_HOURS = 3
 OUTPUT_DIR = "data"
 
-
 # ==============================
 # LOGGING
 # ==============================

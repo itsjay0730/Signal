@@ -1,0 +1,977 @@
+[
+  {
+    "title": "In Japan, the robot isn't coming for your job; it's filling the one nobody wants",
+    "sources": [
+      "Reddit",
+      "Hacker News"
+    ],
+    "urls": [
+      "https://techcrunch.com/2026/04/05/japan-is-proving-experimental-physical-ai-is-ready-for-the-real-world/",
+      "https://www.reddit.com/r/technology/comments/1sd5j5a/in_japan_the_robot_isnt_coming_for_your_job_its/"
+    ],
+    "count": 2,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:40.330606"
+  },
+  {
+    "title": "Software Engineering",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/Backend/",
+      "https://www.reddit.com/r/SoftwareEngineering/"
+    ],
+    "count": 2,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.695030"
+  },
+  {
+    "title": "L\u00d6VE: 2D Game Framework for Lua",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://github.com/love2d/love"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:36.738580"
+  },
+  {
+    "title": "Delve removed from Y Combinator",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.ycombinator.com/companies/delve"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:36.825868"
+  },
+  {
+    "title": "A tail-call interpreter in (nightly) Rust",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.mattkeeter.com/blog/2026-04-05-tailcall/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:36.940429"
+  },
+  {
+    "title": "Frona \u2013 self-hosted personal AI assistant",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://github.com/fronalabs/frona"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:37.125896"
+  },
+  {
+    "title": "OppoScan \u2013 Agentic Market Opportunity Scanner for Startups",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://opposcan.com/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:37.248010"
+  },
+  {
+    "title": "The Endless Goodbye",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.theatlantic.com/family/2026/04/death-dementia/686552/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:37.344616"
+  },
+  {
+    "title": "OpenAI's fall from grace as investors race to Anthropic",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.latimes.com/business/story/2026-04-01/openais-shocking-fall-from-grace-as-investors-race-to-anthropic"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:37.441276"
+  },
+  {
+    "title": "Show HN: A game where you build a GPU",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://jaso1024.com/mvidia/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:37.643534"
+  },
+  {
+    "title": "The Mechanics of Steins Gate (2023) [pdf]",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://github.com/Votuko/steins-gate-mechanics/blob/main/The%20Mechanics%20of%20Steins%20Gate%20v1.0.3.pdf"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:37.747873"
+  },
+  {
+    "title": "The FAA\u2019s flight restriction for drones is an attempt to criminalize filming ICE",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.eff.org/deeplinks/2026/04/faas-temporary-flight-restriction-drones-blatant-attempt-criminalize-filming-ice"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:37.845938"
+  },
+  {
+    "title": "hid-omg-detect: Linux Driver in Development to Detect Malicious HID Devices",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.phoronix.com/news/hid-omg-detect-Malicious-HID"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:37.980382"
+  },
+  {
+    "title": "Show HN: Mdarena \u2013 Benchmark your Claude.md against your own PRs",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://github.com/HudsonGri/mdarena"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:38.162158"
+  },
+  {
+    "title": "German men 18-45 need military permit for extended stays abroad",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.dw.com/en/german-men-need-military-permit-for-extended-stays-abroad/a-76662677"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:38.272426"
+  },
+  {
+    "title": "The threat is comfortable drift toward not understanding what you're doing",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://ergosphere.blog/posts/the-machines-are-fine/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:38.378858"
+  },
+  {
+    "title": "Artemis II crew see first glimpse of far side of Moon [video]",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.bbc.com/news/videos/ce3d5gkd2geo"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:38.486561"
+  },
+  {
+    "title": "Eight years of wanting, three months of building with AI",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://lalitm.com/post/building-syntaqlite-ai/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:38.655441"
+  },
+  {
+    "title": "Apple approves driver that lets Nvidia eGPUs work with Arm Macs",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://twitter.com/__tinygrad__/status/2039213719155310736"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:38.770443"
+  },
+  {
+    "title": "Claude Code Found a Linux Vulnerability Hidden for 23 Years",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://mtlynch.io/claude-code-found-linux-vulnerability/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:38.869164"
+  },
+  {
+    "title": "AWS engineer reports PostgreSQL perf halved by Linux 7.0, fix may not be easy",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.phoronix.com/news/Linux-7.0-AWS-PostgreSQL-Drop"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:38.968336"
+  },
+  {
+    "title": "Computational Physics (2nd Edition) (2025)",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://websites.umich.edu/~mejn/cp2/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:39.069984"
+  },
+  {
+    "title": "How many products does Microsoft have named 'Copilot'?",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://teybannerman.com/strategy/2026/03/31/how-many-microsoft-copilot-are-there.html"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:39.253136"
+  },
+  {
+    "title": "Latest Kindle updates cause gigabytes of data upload during sleep, battery drain",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://old.reddit.com/r/kindle/comments/1sbmiee/kindle_uploading_gigabytes_while_it_sleeps/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:39.355781"
+  },
+  {
+    "title": "Reasons Mastodon won't survive (2017)",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://mashable.com/article/mastodon-wont-survive"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:39.478707"
+  },
+  {
+    "title": "Nanocode: The best Claude Code that $200 can buy in pure JAX on TPUs",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://github.com/salmanmohammadi/nanocode/discussions/1"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:39.580603"
+  },
+  {
+    "title": "Gemma 4 on iPhone",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://apps.apple.com/nl/app/google-ai-edge-gallery/id6749645337"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:39.747972"
+  },
+  {
+    "title": "Does AI moderate political extremes? I'm not convinced",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://philosophybear.substack.com/p/does-ai-moderate-political-extremes"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:39.851262"
+  },
+  {
+    "title": "Running Gemma 4 locally with LM Studio's new headless CLI and Claude Code",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://ai.georgeliu.com/p/running-google-gemma-4-locally-with"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:39.955185"
+  },
+  {
+    "title": "Show HN: Vim Navigator \u2013 MCP server that lets AI agents drive your Neovim",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://github.com/kcaldas/vim-navigator"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:40.053386"
+  },
+  {
+    "title": "How should you change your life decisions if we are being watched by aliens?",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://marginalrevolution.com/marginalrevolution/2026/04/how-should-you-change-your-life-decisions-if-we-are-being-watched-by-alien-drone-probes.html"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:40.226921"
+  },
+  {
+    "title": "Caveman: Why use many token when few token do trick",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://github.com/JuliusBrussee/caveman"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:40.428521"
+  },
+  {
+    "title": "Music for Programming",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://musicforprogramming.net"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:40.525149"
+  },
+  {
+    "title": "Author of \"Careless People\" banned from saying anything negative about Meta",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.thetimes.com/uk/technology-uk/article/sarah-wynn-williams-careless-people-meta-nrffdfpmf"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:40.633353"
+  },
+  {
+    "title": "Wavelets on Graphs via Spectral Graph Theory",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://arxiv.org/abs/0912.3848"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:40.796630"
+  },
+  {
+    "title": "Data Security Risks of Using Foreign-Developed Mobile Apps in the US",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.ic3.gov/PSA/2026/PSA260331"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:40.902866"
+  },
+  {
+    "title": "'Cognitive Surrender' Is a New and Useful Term for How AI Melts Brains",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://gizmodo.com/cognitive-surrender-is-a-new-and-useful-term-for-how-ai-melts-brains-2000742595"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:41.002601"
+  },
+  {
+    "title": "Tell HN: Anthropic no longer allowing Claude Code subscriptions to use OpenClaw",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      ""
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:41.115483"
+  },
+  {
+    "title": "A brief history of instant coffee",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://worksinprogress.co/issue/a-brief-history-of-instant-coffee/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:41.310141"
+  },
+  {
+    "title": "Microsoft hasn't had a coherent GUI strategy since Petzold",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://www.jsnover.com/blog/2026/03/13/microsoft-hasnt-had-a-coherent-gui-strategy-since-petzold/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:41.437151"
+  },
+  {
+    "title": "German implementation of eIDAS will require an Apple/Google account to function",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://bmi.usercontent.opencode.de/eudi-wallet/wallet-development-documentation-public/latest/architecture-concept/06-mobile-devices/02-mdvm/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:41.538882"
+  },
+  {
+    "title": "FBI warns iPhone, Android users: apps, personal data collected, stored overseas",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://nypost.com/2026/04/04/world-news/fbi-warns-some-foreign-apps-could-collect-americans-data-even-if-you-never-download-them/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:41.641882"
+  },
+  {
+    "title": "Embarrassingly simple self-distillation improves code generation",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://arxiv.org/abs/2604.01193"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:41.825037"
+  },
+  {
+    "title": "Zeaota \u2013 AI Native Product Intelligence Tool",
+    "sources": [
+      "Hacker News"
+    ],
+    "urls": [
+      "https://zeaota.ai"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:41.934474"
+  },
+  {
+    "title": "Japan Wants to Build a Solar Ring Around the Moon That Will Provide Endless Clean Energy to Earth",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/technology/comments/1sd9ui7/japan_wants_to_build_a_solar_ring_around_the_moon/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:42.906031"
+  },
+  {
+    "title": "Gen Z is engineering an analog future \u2014 and it\u2019s at least a $5 billion opportunity",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/technology/comments/1sd636a/gen_z_is_engineering_an_analog_future_and_its_at/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:42.906043"
+  },
+  {
+    "title": "Internet shutdown in Iran is now the longest in world history",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/technology/comments/1sdcmwy/internet_shutdown_in_iran_is_now_the_longest_in/"
+    ],
+    "count": 1,
+    "category": "internship",
+    "fetched_at": "2026-04-05T23:49:42.906047"
+  },
+  {
+    "title": "'No on-site doctor': Dental student died in ICU overseen by remote 'tele-health' physician who pronounced him dead on a video screen, lawsuit says\u2026",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/technology/comments/1sdia1v/no_onsite_doctor_dental_student_died_in_icu/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:42.906051"
+  },
+  {
+    "title": "Russia Allegedly Swung at VPNs but Accidentally Hit Its Own Banking Sector Instead",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/technology/comments/1sdb5cp/russia_allegedly_swung_at_vpns_but_accidentally/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:42.906055"
+  },
+  {
+    "title": "Hallucinated citations are polluting the scientific literature. What can be done? - Tens of thousands of publications from 2025 might include invalid references generated by AI, a Nature analysis suggests.",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/technology/comments/1sd0khs/hallucinated_citations_are_polluting_the/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:42.906058"
+  },
+  {
+    "title": "NASA\u2019s Artemis II laser communications system is beaming 4K video from the moon",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/technology/comments/1sd6emu/nasas_artemis_ii_laser_communications_system_is/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:42.906064"
+  },
+  {
+    "title": "Microsoft's AI in its own terms: \"use Copilot at your own risk\"",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/technology/comments/1sd3cvm/microsofts_ai_in_its_own_terms_use_copilot_at/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:42.906067"
+  },
+  {
+    "title": "AI-powered cameras on Wichita school buses raise privacy concerns for one driver",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/technology/comments/1sd5cf7/aipowered_cameras_on_wichita_school_buses_raise/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:42.906070"
+  },
+  {
+    "title": "I have been coding for 11 years and I caught myself completely unable to debug a problem without AI assistance last month. That scared me more than anything I have seen in this industry.",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1sderg4/i_have_been_coding_for_11_years_and_i_caught/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550460"
+  },
+  {
+    "title": "McKinsey's AI Lie Explains What's Happening to Work",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1sd90xu/mckinseys_ai_lie_explains_whats_happening_to_work/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550470"
+  },
+  {
+    "title": "After the release of gemma 4",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1sdg8n3/after_the_release_of_gemma_4/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550474"
+  },
+  {
+    "title": "How LLM sycophancy got the US into the Iran quagmire",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1scp7zz/how_llm_sycophancy_got_the_us_into_the_iran/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550477"
+  },
+  {
+    "title": "You can now give an AI agent its own email, phone number, wallet, computer, and voice. This is what the stack looks like",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1sdiugx/you_can_now_give_an_ai_agent_its_own_email_phone/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550482"
+  },
+  {
+    "title": "Is Google's Gemma 4 really as good as advertised",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1sctzrx/is_googles_gemma_4_really_as_good_as_advertised/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550485"
+  },
+  {
+    "title": "OpenAI CEO Sam Altman accused of sexual abuse by family member",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1sc3kpj/openai_ceo_sam_altman_accused_of_sexual_abuse_by/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550489"
+  },
+  {
+    "title": "AI agents have been blindly guessing your UI this whole time. Here's the file that fixes it.",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1sdd9gl/ai_agents_have_been_blindly_guessing_your_ui_this/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550493"
+  },
+  {
+    "title": "OpenClaw security checklist: practical safeguards for AI agents",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1sd7g80/openclaw_security_checklist_practical_safeguards/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550496"
+  },
+  {
+    "title": "I've made a Wholesale Agent, this is what it does",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/artificial/comments/1sd3l0r/ive_made_a_wholesale_agent_this_is_what_it_does/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:43.550499"
+  },
+  {
+    "title": "Announcement: Temporary LLM Content Ban",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1s9jkzi/announcement_temporary_llm_content_ban/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106207"
+  },
+  {
+    "title": "State of the Subreddit (January 2027): Mods applications and rules updates",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1qoxwdt/state_of_the_subreddit_january_2027_mods/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106216"
+  },
+  {
+    "title": "Parallelizing Cellular Automata with WebGPU Compute Shaders",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1sd7m34/parallelizing_cellular_automata_with_webgpu/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106220"
+  },
+  {
+    "title": "Good APIs Age Slowly",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1scqae7/good_apis_age_slowly/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106225"
+  },
+  {
+    "title": "A whole boss fight in 256 bytes",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1sde1vx/a_whole_boss_fight_in_256_bytes/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106228"
+  },
+  {
+    "title": "Negative 2000 Lines Of Code",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1scsgu5/negative_2000_lines_of_code/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106233"
+  },
+  {
+    "title": "Faster ES|QL aggregations (2\u20133\u00d7) using Swiss-style hash tables",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1sddp2g/faster_esql_aggregations_23_using_swissstyle_hash/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106239"
+  },
+  {
+    "title": "FRACTRAN: A Simple Universal Programming Language for Arithmetic",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1scxso7/fractran_a_simple_universal_programming_language/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106242"
+  },
+  {
+    "title": "Creating a Physics Engine in C - YouTube",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1sdirt2/creating_a_physics_engine_in_c_youtube/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106245"
+  },
+  {
+    "title": "ILLEGAL 3D Rendering Techniques (N64)",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/programming/comments/1sceczs/illegal_3d_rendering_techniques_n64/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.106249"
+  },
+  {
+    "title": "Computer Science Career Questions",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/cscareerquestions/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.695039"
+  },
+  {
+    "title": "We were spending $2,800/mo on Render just to deploy demos. So we built our own PaaS. Now 90 strangers are paying for it.",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/SaaS/comments/1sdixwd/we_were_spending_2800mo_on_render_just_to_deploy/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.695042"
+  },
+  {
+    "title": "31[M4F] #New Jersey #USA - Hey you dropped something, hopefully your standards\u2026",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/r4r/comments/1sdivvq/31m4f_new_jersey_usa_hey_you_dropped_something/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.695050"
+  },
+  {
+    "title": "Chance me for T10/T20 (Junior)",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/chanceme/comments/1sdirwz/chance_me_for_t10t20_junior/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.695053"
+  },
+  {
+    "title": "Dr. & Mrs. Casper Carl Warren, Jr. lived in Wadesboro NC from 1959 to 1964",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/AnsonCountyNCHistory/comments/1sdipa4/dr_mrs_casper_carl_warren_jr_lived_in_wadesboro/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.695056"
+  },
+  {
+    "title": "I think \"equity\" shares in business as a concept is a drag on the economy",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/thinkatives/comments/1sdinf9/i_think_equity_shares_in_business_as_a_concept_is/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.695059"
+  },
+  {
+    "title": "Google interview - Sr firmware engineer, cellular stack",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/FAANGrecruiting/comments/1sdikqc/google_interview_sr_firmware_engineer_cellular/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.695062"
+  },
+  {
+    "title": "Neurodivergents With VisuoSpatial Performance & Learning Advantage?",
+    "sources": [
+      "Reddit"
+    ],
+    "urls": [
+      "https://www.reddit.com/r/gamedev/comments/1sdihc5/neurodivergents_with_visuospatial_performance/"
+    ],
+    "count": 1,
+    "category": "tech",
+    "fetched_at": "2026-04-05T23:49:44.695066"
+  }
+]
