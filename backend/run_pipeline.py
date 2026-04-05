@@ -1,40 +1,77 @@
-# import time
-# import schedule
-# import json
-# from datetime import datetime
+import time
+import json
+import logging
+from datetime import datetime
+import schedule
 
-# from pipelines.news.fetch_news import fetch_news
-
-
-# def job():
-#     print("\n==============================")
-#     print(f"⏰ Running job at {datetime.now()}")
-#     print("==============================")
-
-#     try:
-#         data = fetch_news()
-
-#         print(f"✅ Fetched {len(data)} items")
-
-#         # save to file (for now)
-#         filename = f"data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-
-#         with open(filename, "w") as f:
-#             json.dump(data, f, indent=2)
-
-#         print(f"💾 Saved to {filename}")
-
-#     except Exception as e:
-#         print("❌ Error:", e)
+from pipelines.news.fetch_news import fetch_news
 
 
-# # run every 3 hours
-# schedule.every(3).hours.do(job)
+# ==============================
+# CONFIG
+# ==============================
+FETCH_INTERVAL_HOURS = 3
+OUTPUT_DIR = "data"
 
-# # run once immediately
-# job()
+# ==============================
+# LOGGING SETUP
+# ==============================
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s",
+)
 
-# # keep running
-# while True:
-#     schedule.run_pending()
-#     time.sleep(60)
+logger = logging.getLogger(__name__)
+
+# ==============================
+# JOB FUNCTION
+# ==============================
+def run_pipeline():
+    logger.info("Starting news fetch pipeline...")
+
+    try:
+        data = fetch_news()
+        count = len(data)
+
+        logger.info(f"Fetched {count} items")
+
+        # create filename with timestamp
+        timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+        filename = f"{OUTPUT_DIR}/data_{timestamp}.json"
+
+        # ensure directory exists
+        import os
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+        # save data
+        with open(filename, "w") as f:
+            json.dump(data, f, indent=2)
+
+        logger.info(f"Saved output → {filename}")
+
+    except Exception as e:
+        logger.error(f"Pipeline failed: {e}")
+
+
+# ==============================
+# SCHEDULER
+# ==============================
+def start_scheduler():
+    logger.info(f"Scheduler started (every {FETCH_INTERVAL_HOURS} hours)")
+
+    # run every X hours
+    schedule.every(FETCH_INTERVAL_HOURS).hours.do(run_pipeline)
+
+    # run once immediately
+    run_pipeline()
+
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
+
+
+# ==============================
+# ENTRY POINT
+# ==============================
+if __name__ == "__main__":
+    start_scheduler()
