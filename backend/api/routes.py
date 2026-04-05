@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from pipelines.news.fetch_news import fetch_hacker_news
+from pipelines.news.fetch_news import fetch_news
 router = APIRouter()
 
 # Root route
