@@ -31,18 +31,17 @@ logger = logging.getLogger(__name__)
 # PIPELINE JOB
 # ==============================
 def run_pipeline():
-    logger.info("Starting pipeline...")
+    logger.info("Starting pipeline")
 
     try:
         raw_data = fetch_news()
         logger.info(f"Fetched {len(raw_data)} raw items")
 
-        # 🔥 GROUP DUPLICATES (CORE LOGIC)
+        # group duplicates
         signals = group_duplicates(raw_data)
-
         logger.info(f"Generated {len(signals)} signals")
 
-        # 🔥 sort by importance (count)
+        # sort by importance
         signals = sorted(signals, key=lambda x: x["count"], reverse=True)
 
         # ensure output folder exists
@@ -54,12 +53,12 @@ def run_pipeline():
         with open(filename, "w") as f:
             json.dump(signals, f, indent=2)
 
-        logger.info(f"Saved signals → {filename}")
+        logger.info(f"Saved signals to {filename}")
 
-        # 🔥 preview top signals
+        # preview top signals
         logger.info("Top signals:")
         for s in signals[:5]:
-            logger.info(f"{s['count']}x | {s['title']}")
+            logger.info(f"{s['count']} | {s['title']}")
 
     except Exception as e:
         logger.error(f"Pipeline error: {e}")
