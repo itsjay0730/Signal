@@ -122,7 +122,7 @@ def fetch_news():
         "https://www.reddit.com/r/technology/.rss",
         "https://www.reddit.com/r/artificial/.rss",
         "https://www.reddit.com/r/programming/.rss",
-        "https://www.reddit.com/search.rss?q=software+engineering+internship&sort=new"
+        # "https://www.reddit.com/search.rss?q=software+engineering+internship&sort=new"
     ]
 
     for url in redditUrls:
@@ -136,10 +136,10 @@ def fetch_news():
 
             if title:
                 #simple internship detection
-                if "intern" in title.lower():
-                    category = "internship"
-                else:
-                    category = "tech"
+                # if "intern" in title.lower():
+                #     category = "internship"
+                # else:
+                category = "tech"
 
                 news.append({
                     "id": hash(title),
