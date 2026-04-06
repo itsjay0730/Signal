@@ -115,7 +115,7 @@ def fetch_news():
 
 
     ##################################
-    #  REDDIT RSS 
+    #  REDDIT RSS
     ##################################
 
     redditUrls = [
@@ -135,7 +135,7 @@ def fetch_news():
             title = getattr(entry, "title", "").strip()
 
             if title:
-                # simple internship detection
+                #simple internship detection
                 if "intern" in title.lower():
                     category = "internship"
                 else:
