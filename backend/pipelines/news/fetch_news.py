@@ -37,7 +37,7 @@ def fetch_news():
                         "source_type": "news",
                         "url": article.get("url", ""),
                         "category": category,
-                        "fetched_at": datetime.utcnow().isoformat()
+                        "fetched_at": datetime.now(timezone.utc).isoformat()
                     })
 
 
@@ -81,7 +81,7 @@ def fetch_news():
                         "source_type": "hn",
                         "url": story.get("url", ""),
                         "category": "tech",
-                        "fetched_at": datetime.utcnow().isoformat()
+                        "fetched_at": datetime.now(timezone.utc).isoformat()
                     })
 
 
@@ -110,7 +110,7 @@ def fetch_news():
                         "source_type": "news",
                         "url": article.get("url", ""),
                         "category": category,
-                        "fetched_at": datetime.utcnow().isoformat()
+                        "fetched_at": datetime.now(timezone.utc).isoformat()
                     })
 
 
@@ -148,7 +148,7 @@ def fetch_news():
                     "source_type": "reddit",
                     "url": getattr(entry, "link", ""),
                     "category": category,
-                    "fetched_at": datetime.utcnow().isoformat()
+                    "fetched_at": datetime.now(timezone.utc).isoformat()
                 })
-
+                
     return news
