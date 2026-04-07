@@ -80,7 +80,7 @@ def fetch_news():
                         "source": "Hacker News",
                         "source_type": "hn",
                         "url": story.get("url", ""),
-                        "category": "tech",
+                        "category": "technology",
                         "fetched_at": datetime.utcnow().isoformat()
                     })
 
@@ -122,7 +122,6 @@ def fetch_news():
         "https://www.reddit.com/r/technology/.rss",
         "https://www.reddit.com/r/artificial/.rss",
         "https://www.reddit.com/r/programming/.rss",
-        # "https://www.reddit.com/search.rss?q=software+engineering+internship&sort=new"
     ]
 
     for url in redditUrls:
@@ -135,11 +134,6 @@ def fetch_news():
             title = getattr(entry, "title", "").strip()
 
             if title:
-                #simple internship detection
-                # if "intern" in title.lower():
-                #     category = "internship"
-                # else:
-                category = "tech"
 
                 news.append({
                     "id": hash(title),
@@ -147,7 +141,7 @@ def fetch_news():
                     "source": "Reddit",
                     "source_type": "reddit",
                     "url": getattr(entry, "link", ""),
-                    "category": category,
+                    "category": "technology",
                     "fetched_at": datetime.utcnow().isoformat()
                 })
 
