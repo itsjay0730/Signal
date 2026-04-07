@@ -2,6 +2,7 @@ import os
 import requests
 import feedparser
 from datetime import datetime
+from datetime import timezone
 from dotenv import load_dotenv
 
 load_dotenv()
