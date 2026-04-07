@@ -81,7 +81,7 @@ def fetch_news():
                         "source_type": "hn",
                         "url": story.get("url", ""),
                         "category": "technology",
-                        "fetched_at": datetime.utcnow().isoformat()
+                        "fetched_at": datetime.now(timezone.utc).isoformat()
                     })
 
 
@@ -142,7 +142,7 @@ def fetch_news():
                     "source_type": "reddit",
                     "url": getattr(entry, "link", ""),
                     "category": "technology",
-                    "fetched_at": datetime.utcnow().isoformat()
+                    "fetched_at": datetime.now(timezone.utc).isoformat()
                 })
                 
     return news
