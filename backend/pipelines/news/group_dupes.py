@@ -1,34 +1,34 @@
-# pipelines/news/dedup.py
+from difflib import SequenceMatcher
 
 def normalize(title: str) -> str:
-    """
-    Normalize the title for consistent comparison.
-    Converts to lowercase and removes leading/trailing spaces.
-    """
     return title.lower().strip()
 
+def similarity(a: str, b: str) -> float:
+    """Returns a similarity ratio between 0.0 and 1.0"""
+    return SequenceMatcher(None, a, b).ratio()
 
-def group_duplicates(news):
+def find_group_key(grouped: dict, title: str, threshold: float = 0.85) -> str | None:
     """
-    Groups duplicate news items based on normalized titles.
-
-    Parameters:
-        news (list): List of news dictionaries
-
-    Returns:
-        list: List of grouped news signals
+    scans your already grouped titles and asks does this new title belong to any existing group?
     """
+    for key in grouped:
+        if similarity(title, key) >= threshold:
+            return key
+    return None
+
+def group_duplicates(news, threshold: float = 0.85):
     grouped = {}
 
     for item in news:
-        # Normalize title for comparison
         title = normalize(item.get("title", ""))
 
-        # Skip empty titles
         if not title:
             continue
 
-        if title not in grouped:
+        matched_key = find_group_key(grouped, title, threshold)
+
+        if matched_key is None:
+            # No similar title found → create a new group
             grouped[title] = {
                 "id": hash(title),
                 "title": item["title"],              
@@ -39,12 +39,11 @@ def group_duplicates(news):
                 "fetched_at": item.get("fetched_at"),
             }
         else:
-            # If duplicate → update existing group
-            grouped[title]["sources"].append(item.get("source"))
-            grouped[title]["urls"].append(item.get("url"))
-            grouped[title]["count"] += 1
+            # Similar title found → merge into existing group
+            grouped[matched_key]["sources"].append(item.get("source"))
+            grouped[matched_key]["urls"].append(item.get("url"))
+            grouped[matched_key]["count"] += 1
 
-    # Remove duplicate sources and URLs
     for item in grouped.values():
         item["sources"] = list(set(item["sources"]))
         item["urls"] = list(set(item["urls"]))
