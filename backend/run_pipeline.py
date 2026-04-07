@@ -6,7 +6,7 @@ import schedule
 import os
 
 from pipelines.news.fetch_news import fetch_news
-from backend.pipelines.news.group_dupes import group_duplicates
+from pipelines.news.group_dupes import group_duplicates
 
 
 # ==============================
