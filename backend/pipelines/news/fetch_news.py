@@ -37,7 +37,7 @@ def fetch_news():
                         "source_type": "news",
                         "url": article.get("url", ""),
                         "category": category,
-                        "fetched_at": datetime.utcnow().isoformat()
+                        "fetched_at": datetime.now(timezone.utc).isoformat()
                     })
 
 
@@ -110,7 +110,7 @@ def fetch_news():
                         "source_type": "news",
                         "url": article.get("url", ""),
                         "category": category,
-                        "fetched_at": datetime.utcnow().isoformat()
+                        "fetched_at": datetime.now(timezone.utc).isoformat()
                     })
 
 
@@ -144,5 +144,5 @@ def fetch_news():
                     "category": "technology",
                     "fetched_at": datetime.utcnow().isoformat()
                 })
-
+                
     return news
