@@ -30,6 +30,7 @@ def group_duplicates(news):
 
         if title not in grouped:
             grouped[title] = {
+                "id": hash(title),
                 "title": item["title"],              
                 "sources": [item.get("source")],     
                 "urls": [item.get("url")],           
