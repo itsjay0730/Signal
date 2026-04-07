@@ -35,7 +35,6 @@ def fetch_news():
                         "id": hash(title),
                         "title": title,
                         "source": article.get("source", {}).get("name", ""),
-                        "source_type": "news",
                         "url": article.get("url", ""),
                         "category": category,
                         "fetched_at": datetime.now(timezone.utc).isoformat()
@@ -79,7 +78,6 @@ def fetch_news():
                         "id": hash(title),
                         "title": title,
                         "source": "Hacker News",
-                        "source_type": "hn",
                         "url": story.get("url", ""),
                         "category": "technology",
                         "fetched_at": datetime.now(timezone.utc).isoformat()
@@ -108,7 +106,6 @@ def fetch_news():
                         "id": hash(title),
                         "title": title,
                         "source": article.get("source", {}).get("name", ""),
-                        "source_type": "news",
                         "url": article.get("url", ""),
                         "category": category,
                         "fetched_at": datetime.now(timezone.utc).isoformat()
@@ -140,7 +137,6 @@ def fetch_news():
                     "id": hash(title),
                     "title": title,
                     "source": "Reddit",
-                    "source_type": "reddit",
                     "url": getattr(entry, "link", ""),
                     "category": "technology",
                     "fetched_at": datetime.now(timezone.utc).isoformat()
