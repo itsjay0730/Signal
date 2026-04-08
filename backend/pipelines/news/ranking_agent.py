@@ -2,9 +2,6 @@
 from datetime import datetime, timezone
 
 def get_recency_score(fetched_at: str) -> float:
-    """
-    Convert timestamp → recency score (0–1)
-    """
     try:
         #converts a string into a datetime object so we can use it for the calculation
         fetched_time = datetime.fromisoformat(fetched_at)
@@ -31,11 +28,26 @@ def get_recency_score(fetched_at: str) -> float:
 
     except Exception:
         return 0.5  
-    
 
 def normalize_count(count: int) -> float:
-    """
-    Normalize count to range [0, 1]
-    """
     return min(count, 5) / 5
 
+def ranking_agent(signals: list) -> list:
+
+    for signal in signals:
+        count = signal.get("count", 1)
+        #make sure you use the same spelling for this???
+        impactScore = signal.get("impactScore", 0)
+        relevanceScore = signal.get("relevanceScore", 0)
+        fetched_at = signal.get("fetched_at")
+
+        normalizeCount = normalize_count(count)
+        recencyScore = get_recency_score(fetched_at)
+
+        score = ((normalizeCount * 0.35) + (recencyScore * 0.25) + (impactScore * 0.25) + (relevanceScore * 0.15))
+
+        signal["score"] = round(score, 4)
+
+    # this will take the score from the dict and sort
+    rankedSignals = sorted(key=lambda x: x["score"], reverse=True)
+    return rankedSignals
