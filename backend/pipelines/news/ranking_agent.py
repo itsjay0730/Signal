@@ -30,12 +30,15 @@ def get_recency_score(fetched_at: str) -> float:
         return 0.5  
 
 def normalize_count(count: int) -> float:
+    # we doing this because we want to keep things betwen 0-1 for consistency 
     return min(count, 5) / 5
 
 def ranking_agent(signals: list) -> list:
 
     for signal in signals:
+        #get give the value of the key
         count = signal.get("count", 1)
+
         #make sure you use the same spelling for this???
         impactScore = signal.get("impactScore", 0)
         relevanceScore = signal.get("relevanceScore", 0)
@@ -44,7 +47,8 @@ def ranking_agent(signals: list) -> list:
         normalizeCount = normalize_count(count)
         recencyScore = get_recency_score(fetched_at)
 
-        score = ((normalizeCount * 0.35) + (recencyScore * 0.25) + (impactScore * 0.25) + (relevanceScore * 0.15))
+        # this are not the perfect percent weightage it depends on what behavior do we want?
+        score = ((normalizeCount * 0.30) + (recencyScore * 0.25) + (impactScore * 0.30) + (relevanceScore * 0.15))
 
         signal["score"] = round(score, 4)
 
