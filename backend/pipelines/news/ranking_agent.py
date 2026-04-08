@@ -33,4 +33,9 @@ def get_recency_score(fetched_at: str) -> float:
         return 0.5  
     
 
-# def ranking_agent():
+def normalize_count(count: int) -> float:
+    """
+    Normalize count to range [0, 1]
+    """
+    return min(count, 5) / 5
+
