@@ -30,10 +30,11 @@ def group_duplicates(news, threshold: float = 0.85):
         if matched_key is None:
             # No similar title found → create a new group
             grouped[title] = {
-                "title": item["title"],
-                "sources": [item.get("source")],
-                "urls": [item.get("url")],
-                "count": 1,
+                "id": hash(title),
+                "title": item["title"],              
+                "sources": [item.get("source")],     
+                "urls": [item.get("url")],           
+                "count": 1,                        
                 "category": item.get("category"),
                 "fetched_at": item.get("fetched_at"),
             }
