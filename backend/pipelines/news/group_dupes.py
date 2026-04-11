@@ -9,7 +9,7 @@ def similarity(a: str, b: str) -> float:
 
 def find_group_key(grouped: dict, title: str, threshold: float = 0.80) -> str | None:
     """
-    scans your already grouped titles and asks does this new title belong to any existing group
+    scans your already grouped titles and asks does this new title belong to any existing group?
     """
     for key in grouped:
         if similarity(title, key) >= threshold:
