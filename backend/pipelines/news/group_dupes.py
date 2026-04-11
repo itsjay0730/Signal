@@ -7,16 +7,16 @@ def similarity(a: str, b: str) -> float:
     """Returns a similarity ratio between 0.0 and 1.0"""
     return SequenceMatcher(None, a, b).ratio()
 
-def find_group_key(grouped: dict, title: str, threshold: float = 0.85) -> str | None:
+def find_group_key(grouped: dict, title: str, threshold: float = 0.80) -> str | None:
     """
-    scans your already grouped titles and asks does this new title belong to any existing group?
+    scans your already grouped titles and asks does this new title belong to any existing group
     """
     for key in grouped:
         if similarity(title, key) >= threshold:
             return key
     return None
 
-def group_duplicates(news, threshold: float = 0.85):
+def group_duplicates(news, threshold: float = 0.80):
     grouped = {}
 
     for item in news:
