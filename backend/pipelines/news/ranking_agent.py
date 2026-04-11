@@ -1,4 +1,3 @@
-
 from datetime import datetime, timezone
 
 def get_recency_score(fetched_at: str) -> float:
