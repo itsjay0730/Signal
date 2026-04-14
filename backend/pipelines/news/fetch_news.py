@@ -20,9 +20,7 @@ def fetch_news():
     newsCategories = ["technology", "business"]
 
     for category in newsCategories:
-        newsResponse = requests.get(
-            f"https://newsapi.org/v2/top-headlines?category={category}&pageSize=30&apiKey={NEWS_API_KEY}"
-        )
+        newsResponse = requests.get(f"https://newsapi.org/v2/top-headlines?category={category}&pageSize=30&apiKey={NEWS_API_KEY}")
 
         if newsResponse.status_code == 200:
             articles = newsResponse.json().get("articles", [])
@@ -34,6 +32,7 @@ def fetch_news():
                     news.append({
                         "id": hash(title),
                         "title": title,
+                        "description": article.get("description", ""),
                         "source": article.get("source", {}).get("name", ""),
                         "url": article.get("url", ""),
                         "category": category,
@@ -77,6 +76,7 @@ def fetch_news():
                     news.append({
                         "id": hash(title),
                         "title": title,
+                        "description": story.get("text", ""),
                         "source": "Hacker News",
                         "url": story.get("url", ""),
                         "category": "technology",
@@ -105,6 +105,7 @@ def fetch_news():
                     news.append({
                         "id": hash(title),
                         "title": title,
+                        "description": article.get("description", ""),
                         "source": article.get("source", {}).get("name", ""),
                         "url": article.get("url", ""),
                         "category": category,
@@ -136,6 +137,7 @@ def fetch_news():
                 news.append({
                     "id": hash(title),
                     "title": title,
+                    "description": getattr(entry, "summary", ""),
                     "source": "Reddit",
                     "url": getattr(entry, "link", ""),
                     "category": "technology",
