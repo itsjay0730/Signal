@@ -1,4 +1,5 @@
 import os
+import json
 from google import genai
 from dotenv import load_dotenv
 
@@ -7,22 +8,51 @@ client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def analyze(article):
     prompt = f"""
-                You are a tech news analyst.
+                You are a tech news intelligence analyst.
 
-                Analyze this article and return JSON only.
+                Analyze the following article and return ONLY valid JSON.
+                Do not include explanations, markdown, or extra text.
+                Return EXACTLY the JSON structure specified.
 
+                Article:
                 Title: {article.get("title", "")}
                 Description: {article.get("description", "")}
                 Source: {article.get("source", "")}
+                URL: {article.get("url", "")}
+                Category: {article.get("category", "")}
+                Fetched At: {article.get("fetched_at", "")}
 
-                Return JSON:
+                Return EXACTLY this JSON format:
 
-                summary: one sentence summary
-                impactScore: 1-10
-                relevanceScore: 1-10
-                qualityScore: 1-10
-                category: short category name
-                isRelevant: true or false
+                {{
+                "signal_title": string,
+                "category": string[],
+                "summary": string,
+                "impact": string,
+                "impact_score": number,
+                "relevance": string,
+                "relevance_score": number,
+                "what_to_do": string,
+                "impact_direction": "positive" | "negative",
+                "quality_score": number,
+                "isRelevant": boolean
+                }}
+
+                Rules:
+                - summary must be 2-3 concise sentences
+                - category must be one short related keyword (AI, Robotics, Startups, Big Tech, etc.)
+                - impact must explain what will happen
+                - relevance must explain why this matters now
+                - what_to_do must be actionable (watch, learn, apply, invest, etc.)
+                - tags must be 3-6 short keywords
+                - impact_score must be between 1 and 10
+                - relevance_score must be between 1 and 10
+                - quality_score must be between 1 and 10
+                - impact_direction must be "positive" or "negative"
+                - isRelevant must be true or false
+                - signal_title must be short, clear, and better than original title (max 8 words)
+
+                Return ONLY JSON.
              """
 
     try:
@@ -31,21 +61,23 @@ def analyze(article):
             contents=prompt
         )
 
-        text = response.text
-
-        import json
-        parsed = json.loads(text)
-
-        if not parsed.get("isRelevant") or parsed.get("qualityScore", 0) < 5:
+        parsed = json.loads(response.text)
+        
+        if not parsed.get("isRelevant") or parsed.get("quality_score", 0) < 5:
             return None
 
         updatedArticle = {
             **article,
+            "signal_title": parsed.get("signal_title"),
             "summary": parsed.get("summary"),
-            "impactScore": parsed.get("impactScore"),
-            "relevanceScore": parsed.get("relevanceScore"),
-            "qualityScore": parsed.get("qualityScore"),
-            "category": parsed.get("category")
+            "category": parsed.get("category"),
+            "impact": parsed.get("impact"),
+            "impact_score": parsed.get("impact_score"),
+            "relevance": parsed.get("relevance"),
+            "relevance_score": parsed.get("relevance_score"),
+            "what_to_do": parsed.get("what_to_do"),
+            "impact_direction": parsed.get("impact_direction"),
+            "quality_score": parsed.get("quality_score")
         }
 
         return updatedArticle
