@@ -5,4 +5,19 @@ from dotenv import load_dotenv
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
+def analyze(article):
+    bad = False
+    
 
+    if bad:
+        return None
+    return updatedArticle
+
+
+def analyzeArticles(articles):
+    news = []
+    for article in articles:
+        result = analyze(article)
+        if result:
+            news.append(result)
+    return news
