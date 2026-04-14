@@ -67,18 +67,18 @@ def fetch_news():
         storyResponse = requests.get(HACKER_URL + f"/item/{storyId}.json")
 
         if storyResponse.status_code == 200:
-            story = storyResponse.json()
+            article = storyResponse.json()
 
-            if story and story.get("title") and story.get("type") == "story":
-                title = story.get("title", "").split(" - ")[0].strip()
+            if article and article.get("title") and article.get("type") == "story":
+                title = article.get("title", "").split(" - ")[0].strip()
 
                 if title:
                     news.append({
                         "id": hash(title),
                         "title": title,
-                        "description": story.get("text", ""),
+                        "description": article.get("text", ""),
                         "source": "Hacker News",
-                        "url": story.get("url", ""),
+                        "url": article.get("url", ""),
                         "category": "technology",
                         "fetched_at": datetime.now(timezone.utc).isoformat()
                     })
