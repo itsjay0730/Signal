@@ -26,7 +26,7 @@ def analyze(article):
 
                 {{
                 "signal_title": string,
-                "category": string[],
+                "category": string,
                 "summary": string,
                 "impact": string,
                 "impact_score": number,
@@ -44,7 +44,6 @@ def analyze(article):
                 - impact must explain what will happen
                 - relevance must explain why this matters now
                 - what_to_do must be actionable (watch, learn, apply, invest, etc.)
-                - tags must be 3-6 short keywords
                 - impact_score must be between 1 and 10
                 - relevance_score must be between 1 and 10
                 - quality_score must be between 1 and 10
@@ -62,7 +61,7 @@ def analyze(article):
         )
 
         parsed = json.loads(response.text)
-        
+
         if not parsed.get("isRelevant") or parsed.get("quality_score", 0) < 5:
             return None
 
