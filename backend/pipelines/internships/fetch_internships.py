@@ -1,5 +1,6 @@
 import requests
 from datetime import datetime, timezone
+import feedparser
 
 #helps to find the internship through keywords like mainly for tech
 def isTechInternship(title: str) -> bool:
@@ -64,5 +65,23 @@ def fetch_internships():
         "https://www.reddit.com/search.rss?q=software+engineering+internship&sort=new",
         "https://www.reddit.com/search.rss?q=swe+internship&sort=new"
     ]
+    for url in redditUrls:
+        feed = feedparser.parse(
+            url,
+            request_headers={"User-Agent": "SignalApp/1.0 (by u/testuser)"}
+        )
+        for entry in feed.entries[:10]:
+            title = getattr(entry, "title", "").strip()
+
+            if title:
+                internships.append({
+                    "id": hash(title),
+                    "title": title,
+                    "description": getattr(entry, "summary", ""),
+                    "source": "Reddit",
+                    "url": getattr(entry, "link", ""),
+                    "category": "technology",
+                    "fetched_at": datetime.now(timezone.utc).isoformat()
+                })
 
     return internships
