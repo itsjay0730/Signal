@@ -7,6 +7,7 @@ load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def analyze(article):
+    # prompt to feed to llm for exact output
     prompt = f"""
                 You are a tech news intelligence analyst.
 
