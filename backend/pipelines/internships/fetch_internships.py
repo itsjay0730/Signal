@@ -56,5 +56,13 @@ def fetch_internships():
                 "category": "internship",
                 "fetched_at": datetime.now(timezone.utc).isoformat()
             })
+    ##################################
+    #  REDDIT RSS (INTERNSHIPS)
+    ##################################
+
+    redditUrls = [
+        "https://www.reddit.com/search.rss?q=software+engineering+internship&sort=new",
+        "https://www.reddit.com/search.rss?q=swe+internship&sort=new"
+    ]
 
     return internships
