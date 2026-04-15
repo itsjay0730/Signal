@@ -22,3 +22,39 @@ def isTechInternship(title: str) -> bool:
             return True
     return False 
 
+def fetch_internships():
+    internships = []
+
+    ##################################
+    #  ARBEITNOW API
+    ##################################
+
+    ARBEITNOW_URL = "https://www.arbeitnow.com/api/job-board-api"
+
+    response = requests.get(ARBEITNOW_URL)
+
+    if response.status_code == 200:
+        jobs = response.json().get("data", [])
+
+        for job in jobs:
+            #removes extra spaces from the beginning and end of a string
+            title = job.get("title", "").strip()
+
+            if not title:
+                continue
+
+            #filter only tech internships
+            if not isTechInternship(title):
+                continue
+
+            internships.append({
+                "id": hash(title),
+                "title": title,
+                "description": job.get("description", ""),
+                "source": "Arbeitnow",
+                "url": job.get("url", ""),
+                "category": "internship",
+                "fetched_at": datetime.now(timezone.utc).isoformat()
+            })
+
+    return internships
