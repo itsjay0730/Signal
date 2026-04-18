@@ -7,11 +7,11 @@ def getRecencyScore(fetchedAt: str) -> float:
         #fetch current time
         now = datetime.now(timezone.utc)
 
-        # check if it has the timezone if not it will assign a universal timezone 
+        # check if it has the timezone if not it will assign a universal timezone
         if fetchedTime.tzinfo is None:
             fetchedTime = fetchedTime.replace(tzinfo=timezone.utc)
 
-        # calculates the hour
+        # calculates the hours
         hoursOld = (now - fetchedTime).total_seconds() / 3600
 
         if hoursOld <= 3:
