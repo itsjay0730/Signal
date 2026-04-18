@@ -38,8 +38,8 @@ def ranking(signals: list) -> list:
         count = signal.get("count", 1)
         normCount = normalizeCount(count)
 
-        impactScore = signal.get("impactScore", 0)
-        relevanceScore = signal.get("relevanceScore", 0)
+        impactScore = signal.get("impact_score", 0)
+        relevanceScore = signal.get("relevance_score", 0)
         fetchedAt = signal.get("fetched_at")
 
         recencyScore = getRecencyScore(fetchedAt)
