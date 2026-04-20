@@ -2,13 +2,13 @@ import requests
 from datetime import datetime, timezone
 import feedparser
 
-#helps to find the internship through keywords like mainly for tech
+#helps find the internship through keywords mainly for tech
 def isTechInternship(title: str) -> bool:
     title = title.lower()
 
     keywords = [
-        "intern",
-        "internship",
+        # "intern",        lowkey dont think we need these two bc were fetching internships,
+        # "internship",    always return and wont filter for tech only
         "software",
         "engineer",
         "developer",
@@ -18,8 +18,8 @@ def isTechInternship(title: str) -> bool:
         "swe"
     ]
 
-    for k in keywords:
-        if k in title:
+    for keyword in keywords:
+        if keyword in title:
             return True
     return False 
 
