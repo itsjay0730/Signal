@@ -44,7 +44,7 @@ def fetch_internships():
             if not title:
                 continue
 
-            #filter only tech internships
+            #filter only for tech internships
             if not isTechInternship(title):
                 continue
 
