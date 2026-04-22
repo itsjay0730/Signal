@@ -7,8 +7,6 @@ def isTechInternship(title: str) -> bool:
     title = title.lower()
 
     keywords = [
-        # "intern",        lowkey dont think we need these two bc were fetching internships,
-        # "internship",    always return and wont filter for tech only
         "software",
         "engineer",
         "developer",
