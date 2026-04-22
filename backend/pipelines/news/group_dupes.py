@@ -1,7 +1,11 @@
 from difflib import SequenceMatcher
+import re
 
 def normalize(title: str) -> str:
-    return title.lower().strip()
+    title = title.lower()
+    title = re.sub(r'[^\w\s]', '', title)  
+    title = re.sub(r'\s+', ' ', title).strip() 
+    return title
 
 def similarity(a: str, b: str) -> float:
     """Returns a similarity ratio between 0.0 and 1.0"""
