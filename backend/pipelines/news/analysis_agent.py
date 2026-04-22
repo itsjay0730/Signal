@@ -18,10 +18,11 @@ def analyze(article):
                 Article:
                 Title: {article.get("title", "")}
                 Description: {article.get("description", "")}
-                Source: {article.get("source", "")}
-                URL: {article.get("url", "")}
+                Sources: {", ".join(article.get("sources", []))}
+                URLs: {(article.get("urls", [""])[0])}
                 Category: {article.get("category", "")}
                 Fetched At: {article.get("fetched_at", "")}
+                This topic appears in {article.get("count", 1)} articles from sources: {", ".join(article.get("sources", []))}.
 
                 Return EXACTLY this JSON format:
 

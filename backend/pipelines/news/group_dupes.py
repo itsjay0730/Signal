@@ -20,7 +20,7 @@ def find_group_key(grouped: dict, title: str, threshold: float = 0.80) -> str | 
             return key
     return None
 
-def group_duplicates(news, threshold: float = 0.80):
+def groupDuplicates(news, threshold: float = 0.80):
     grouped = {}
 
     for item in news:
@@ -32,7 +32,7 @@ def group_duplicates(news, threshold: float = 0.80):
         matched_key = find_group_key(grouped, title, threshold)
 
         if matched_key is None:
-            # No similar title found → create a new group
+            #No similar title found, create a new group
             grouped[title] = {
                 "id": hash(title),
                 "title": item["title"],              
@@ -43,7 +43,7 @@ def group_duplicates(news, threshold: float = 0.80):
                 "fetched_at": item.get("fetched_at"),
             }
         else:
-            # Similar title found → merge into existing group
+            #Similar title found → merge into existing group
             grouped[matched_key]["sources"].append(item.get("source"))
             grouped[matched_key]["urls"].append(item.get("url"))
             grouped[matched_key]["count"] += 1

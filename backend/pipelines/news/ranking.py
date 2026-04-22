@@ -33,7 +33,7 @@ def normalizeCount(count: int) -> float:
     #we doing this because we want to keep things betwen 0-1 for consistency 
     return min(count, 5) / 5
 
-def ranking(signals: list) -> list:
+def rankArticles(signals: list) -> list:
     for signal in signals:
         count = signal.get("count", 1)
         normCount = normalizeCount(count)
