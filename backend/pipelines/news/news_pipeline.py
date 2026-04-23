@@ -4,7 +4,7 @@ from .analysis_agent import analyzeArticles
 from .ranking import rankArticles
 
 #Kept this file just in case I need to add more
-#to this pipeline later, makes it easy
+#to this pipeline later
 
 def run_news_pipeline():
     news = fetch_news()
