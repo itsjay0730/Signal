@@ -60,6 +60,7 @@ def groupDuplicates(news, threshold: float = 0.77):
                 "count": 1,                        
                 "category": item.get("category"),
                 "fetched_at": item.get("fetched_at"),
+                "embedding": embedding
             }
         else:
             #Similar title found → merge into existing group
@@ -70,5 +71,8 @@ def groupDuplicates(news, threshold: float = 0.77):
     for item in grouped.values():
         item["sources"] = list(set(item["sources"]))
         item["urls"] = list(set(item["urls"]))
+        
+        #remove embedding before returning
+        item.pop("embedding", None)
 
     return list(grouped.values())
