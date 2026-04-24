@@ -1,5 +1,11 @@
-from difflib import SequenceMatcher
+# from difflib import SequenceMatcher
 import re
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+
+
+#local model  the text is for that helps to that turns titles into meaning-based number vectors.
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def normalize(title: str) -> str:
     title = title.lower()
@@ -7,20 +13,31 @@ def normalize(title: str) -> str:
     title = re.sub(r'\s+', ' ', title).strip() 
     return title
 
-def similarity(a: str, b: str) -> float:
-    """Returns a similarity ratio between 0.0 and 1.0"""
-    return SequenceMatcher(None, a, b).ratio()
+# create the embeddings
+def getEmbedding(title: str):
+    return model.encode(title)
 
-def find_group_key(grouped: dict, title: str, threshold: float = 0.80) -> str | None:
+#semantic similarity
+def similarity(embedding1, embedding2) -> float:
+    return cosine_similarity([embedding1], [embedding2])[0][0]
+
+# def similarity(a: str, b: str) -> float:
+#     """Returns a similarity ratio between 0.0 and 1.0"""
+#     return SequenceMatcher(None, a, b).ratio()
+
+def find_group_key(grouped: dict, embedding, threshold: float = 0.77) -> str | None:
     """
-    scans your already grouped titles and asks does this new title belong to any existing group?
+    scans already grouped titles and checks if this new title belongs to any existing group.
     """
     for key in grouped:
-        if similarity(title, key) >= threshold:
+        existingEmbedding = grouped[key]["embedding"]
+
+        if similarity(embedding, existingEmbedding) >= threshold:
             return key
+
     return None
 
-def groupDuplicates(news, threshold: float = 0.80):
+def groupDuplicates(news, threshold: float = 0.77):
     grouped = {}
 
     for item in news:
@@ -29,7 +46,9 @@ def groupDuplicates(news, threshold: float = 0.80):
         if not title:
             continue
 
-        matched_key = find_group_key(grouped, title, threshold)
+        embedding = getEmbedding(title)
+
+        matched_key = find_group_key(grouped, embedding, threshold)
 
         if matched_key is None:
             #No similar title found, create a new group
@@ -41,6 +60,7 @@ def groupDuplicates(news, threshold: float = 0.80):
                 "count": 1,                        
                 "category": item.get("category"),
                 "fetched_at": item.get("fetched_at"),
+                "embedding": embedding
             }
         else:
             #Similar title found → merge into existing group
@@ -51,5 +71,8 @@ def groupDuplicates(news, threshold: float = 0.80):
     for item in grouped.values():
         item["sources"] = list(set(item["sources"]))
         item["urls"] = list(set(item["urls"]))
+        
+        #remove embedding before returning
+        item.pop("embedding", None)
 
     return list(grouped.values())
