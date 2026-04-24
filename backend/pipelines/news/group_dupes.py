@@ -25,15 +25,16 @@ def similarity(embedding1, embedding2) -> float:
 #     """Returns a similarity ratio between 0.0 and 1.0"""
 #     return SequenceMatcher(None, a, b).ratio()
 
-def find_group_key(grouped: dict, title: str, embedding, threshold: float = 0.80) -> str | None:
+def find_group_key(grouped: dict, embedding, threshold: float = 0.77) -> str | None:
     """
-    scans your already grouped titles and asks does this new title belong to any existing group?
+    scans already grouped titles and checks if this new title belongs to any existing group.
     """
     for key in grouped:
         existingEmbedding = grouped[key]["embedding"]
 
         if similarity(embedding, existingEmbedding) >= threshold:
             return key
+
     return None
 
 def groupDuplicates(news, threshold: float = 0.77):
