@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-#local model
+#local model  the text is for that helps to that turns titles into meaning-based number vectors.
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def normalize(title: str) -> str:
