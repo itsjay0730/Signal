@@ -3,6 +3,10 @@ import re
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
+
+#local model
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
 def normalize(title: str) -> str:
     title = title.lower()
     title = re.sub(r'[^\w\s]', '', title)  
