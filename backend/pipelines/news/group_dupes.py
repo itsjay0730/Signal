@@ -1,5 +1,7 @@
 from difflib import SequenceMatcher
 import re
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
 
 def normalize(title: str) -> str:
     title = title.lower()
