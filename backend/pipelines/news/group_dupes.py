@@ -13,6 +13,9 @@ def normalize(title: str) -> str:
     title = re.sub(r'\s+', ' ', title).strip() 
     return title
 
+# create the embeddings
+def getEmbedding(title: str):
+    return model.encode(title)
 
 #semantic similarity
 def similarity(embedding1, embedding2) -> float:
