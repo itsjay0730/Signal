@@ -21,20 +21,22 @@ def getEmbedding(title: str):
 def similarity(embedding1, embedding2) -> float:
     return cosine_similarity([embedding1], [embedding2])[0][0]
 
-def similarity(a: str, b: str) -> float:
-    """Returns a similarity ratio between 0.0 and 1.0"""
-    return SequenceMatcher(None, a, b).ratio()
+# def similarity(a: str, b: str) -> float:
+#     """Returns a similarity ratio between 0.0 and 1.0"""
+#     return SequenceMatcher(None, a, b).ratio()
 
 def find_group_key(grouped: dict, title: str, threshold: float = 0.80) -> str | None:
     """
     scans your already grouped titles and asks does this new title belong to any existing group?
     """
     for key in grouped:
-        if similarity(title, key) >= threshold:
+        existingEmbedding = grouped[key]["embedding"]
+
+        if similarity(embedding, existingEmbedding) >= threshold:
             return key
     return None
 
-def groupDuplicates(news, threshold: float = 0.80):
+def groupDuplicates(news, threshold: float = 0.77):
     grouped = {}
 
     for item in news:
@@ -43,7 +45,9 @@ def groupDuplicates(news, threshold: float = 0.80):
         if not title:
             continue
 
-        matched_key = find_group_key(grouped, title, threshold)
+        embedding = getEmbedding(title)
+
+        matched_key = find_group_key(grouped, embedding, threshold)
 
         if matched_key is None:
             #No similar title found, create a new group
