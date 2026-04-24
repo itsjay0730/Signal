@@ -6,12 +6,12 @@ from concurrent.futures import ThreadPoolExecutor
 #call both pipelines
 def run_all_pipelines():
     with ThreadPoolExecutor() as executor:
-        news = executor.submit(run_news_pipeline)
-        internships = executor.submit(run_internship_pipeline)
+        newsThread = executor.submit(run_news_pipeline)
+        internshipThread = executor.submit(run_internship_pipeline)
 
         try:
-            news = news.result()
-            internships = internships.result()
+            news = newsThread.result()
+            internships = internshipThread.result()
         except Exception as e:
             print(f"Pipeline error: {e}")
             raise
