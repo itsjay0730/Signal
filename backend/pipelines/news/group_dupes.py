@@ -13,6 +13,11 @@ def normalize(title: str) -> str:
     title = re.sub(r'\s+', ' ', title).strip() 
     return title
 
+
+#semantic similarity
+def similarity(embedding1, embedding2) -> float:
+    return cosine_similarity([embedding1], [embedding2])[0][0]
+
 def similarity(a: str, b: str) -> float:
     """Returns a similarity ratio between 0.0 and 1.0"""
     return SequenceMatcher(None, a, b).ratio()
