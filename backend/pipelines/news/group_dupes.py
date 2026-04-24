@@ -1,4 +1,4 @@
-from difflib import SequenceMatcher
+# from difflib import SequenceMatcher
 import re
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -25,7 +25,7 @@ def similarity(embedding1, embedding2) -> float:
 #     """Returns a similarity ratio between 0.0 and 1.0"""
 #     return SequenceMatcher(None, a, b).ratio()
 
-def find_group_key(grouped: dict, title: str, threshold: float = 0.80) -> str | None:
+def find_group_key(grouped: dict, title: str, embedding, threshold: float = 0.80) -> str | None:
     """
     scans your already grouped titles and asks does this new title belong to any existing group?
     """
