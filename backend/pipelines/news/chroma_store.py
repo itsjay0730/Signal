@@ -36,19 +36,19 @@ def querySimilarTitle(embedding, threshold: float = 0.77):
 
     return None
 
-# def storeTitleEmbedding(item, title: str, embedding, group_key: str):
-#     signalId = str(uuid.uuid4())
+def storeTitleEmbedding(item, title: str, embedding, group_key: str):
+    signalId = str(uuid.uuid4())
 
-#     collection.add(
-#         ids=[signalId],
-#         embeddings=[embedding],
-#         documents=[title],
-#         metaDatas=[{
-#             "group_key": group_key,
-#             "title": item.get("title", ""),
-#             "source": item.get("source", ""),
-#             "url": item.get("url", ""),
-#             "category": item.get("category", ""),
-#             "fetched_at": item.get("fetched_at", "")
-#         }]
-#     )
+    collection.add(
+        ids=[signalId],
+        embeddings=[embedding],
+        documents=[title],
+        metaDatas=[{
+            "group_key": group_key,
+            "title": item.get("title", ""),
+            "source": item.get("source", ""),
+            "url": item.get("url", ""),
+            "category": item.get("category", ""),
+            "fetched_at": item.get("fetched_at", "")
+        }]
+    )
