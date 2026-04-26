@@ -2,7 +2,7 @@
 import re
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-
+from pipelines.news.chroma_store import querySimilarTitle, storeTitleEmbedding
 
 #local model  the text is for that helps to that turns titles into meaning-based number vectors.
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -25,17 +25,17 @@ def similarity(embedding1, embedding2) -> float:
 #     """Returns a similarity ratio between 0.0 and 1.0"""
 #     return SequenceMatcher(None, a, b).ratio()
 
-def find_group_key(grouped: dict, embedding, threshold: float = 0.77) -> str | None:
-    """
-    scans already grouped titles and checks if this new title belongs to any existing group.
-    """
-    for key in grouped:
-        existingEmbedding = grouped[key]["embedding"]
+# def find_group_key(grouped: dict, embedding, threshold: float = 0.77) -> str | None:
+#     """
+#     scans already grouped titles and checks if this new title belongs to any existing group.
+#     """
+#     for key in grouped:
+#         existingEmbedding = grouped[key]["embedding"]
 
-        if similarity(embedding, existingEmbedding) >= threshold:
-            return key
+#         if similarity(embedding, existingEmbedding) >= threshold:
+#             return key
 
-    return None
+#     return None
 
 def groupDuplicates(news, threshold: float = 0.77):
     grouped = {}
@@ -47,10 +47,10 @@ def groupDuplicates(news, threshold: float = 0.77):
             continue
 
         embedding = getEmbedding(title)
-
-        matched_key = find_group_key(grouped, embedding, threshold)
+        matched_key = querySimilarTitle(embedding, threshold)
 
         if matched_key is None:
+            group_key = title
             #No similar title found, create a new group
             grouped[title] = {
                 "id": hash(title),
@@ -63,10 +63,13 @@ def groupDuplicates(news, threshold: float = 0.77):
                 "embedding": embedding
             }
         else:
+            group_key = matched_key
             #Similar title found → merge into existing group
             grouped[matched_key]["sources"].append(item.get("source"))
             grouped[matched_key]["urls"].append(item.get("url"))
             grouped[matched_key]["count"] += 1
+
+        storeTitleEmbedding(item, title, embedding, group_key)
 
     for item in grouped.values():
         item["sources"] = list(set(item["sources"]))
@@ -76,3 +79,21 @@ def groupDuplicates(news, threshold: float = 0.77):
         item.pop("embedding", None)
 
     return list(grouped.values())
+
+# Flow
+
+# Article comes in
+# ↓
+# Normalize title
+# ↓
+# Create embedding
+# ↓
+# Ask Chroma: “seen something similar?”
+# ↓
+# If yes → use returned group_key and merge
+# ↓
+# If no → create new group_key
+# ↓
+# Store article embedding + metadata in Chroma
+# ↓
+# Return clean grouped signals
