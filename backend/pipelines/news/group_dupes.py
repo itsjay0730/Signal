@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from pipelines.news.chroma_store import querySimilarTitle, storeTitleEmbedding
 
-#local model  the text is for that helps to that turns titles into meaning-based number vectors.
+#local model the text is for that helps to that turns titles into meaning-based number vectors.
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def normalize(title: str) -> str:
@@ -41,10 +41,10 @@ def groupDuplicates(news, threshold: float = 0.77):
     grouped = {}
 
     for item in news:
-        title = normalize(item.get("title", ""))
-
-        if not title:
+         if not title:
             continue
+         
+        title = normalize(item.get("title", ""))
 
         embedding = getEmbedding(title)
         matched_key = querySimilarTitle(embedding, threshold)
