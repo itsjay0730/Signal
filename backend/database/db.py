@@ -20,5 +20,9 @@ def save_signals(signals: list):
 
 #save the internships
 def save_internships(internships: list):
+    if not internships:
+        print("No internships to save")
+        return
+    
     response = supabase.table("internships").upsert(internships).execute()
     return response
