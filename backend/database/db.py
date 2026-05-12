@@ -11,6 +11,10 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 #save the signals
 def save_signals(signals: list):
+    if not signals:
+        print("No signals to save")
+        return 
+    
     response = supabase.table("signals").insert(signals).execute()
     return response
 
