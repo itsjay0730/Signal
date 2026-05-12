@@ -47,7 +47,7 @@ def fetch_internships():
                 continue
 
             internships.append({
-                "id": hash(title),
+                "id": hash(title + job.get("url", "")),
                 "title": title,
                 "description": job.get("description", ""),
                 "source": "Arbeitnow",
@@ -73,7 +73,7 @@ def fetch_internships():
 
             if title:
                 internships.append({
-                    "id": hash(title),
+                    "id": hash(title + getattr(entry, "link", "")),
                     "title": title,
                     "description": getattr(entry, "summary", ""),
                     "source": "Reddit",
