@@ -82,4 +82,9 @@ def fetch_internships():
                     "fetched_at": datetime.now(timezone.utc).isoformat()
                 })
 
-    return internships
+    unique = {}
+
+    for internship in internships:
+        unique[internship["id"]] = internship
+
+    return list(unique.values())
