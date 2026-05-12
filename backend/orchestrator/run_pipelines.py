@@ -22,3 +22,7 @@ def run_all_pipelines():
     save_internships(internships)
 
     return {"news": news, "internships": internships}
+
+
+if __name__ == "__main__":
+    run_all_pipelines()
