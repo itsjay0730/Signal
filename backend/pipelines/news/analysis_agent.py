@@ -57,12 +57,13 @@ def analyze(article):
              """
 
     try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
-            contents=prompt
-        )
-
-        parsed = json.loads(response.text)
+        response = client.models.generate_content(model="gemini-2.5-flash-lite", contents=prompt)
+        
+        cleaned = response.text.strip()
+        if cleaned.startswith("```json"):
+            cleaned = cleaned.replace("```json", "").replace("```", "").strip()
+            
+        parsed = json.loads(cleaned)
 
         if not parsed.get("isRelevant") or parsed.get("quality_score", 0) < 5:
             return None

@@ -9,6 +9,7 @@ from .ranking import rankArticles
 def run_news_pipeline():
     news = fetch_news()
     groupedArticles = groupDuplicates(news)
+    groupedArticles = groupedArticles[:3]
     analyzedArticles = analyzeArticles(groupedArticles)
     rankedArticles = rankArticles(analyzedArticles)
     
