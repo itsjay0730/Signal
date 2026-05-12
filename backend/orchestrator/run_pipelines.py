@@ -19,5 +19,6 @@ def run_all_pipelines():
             raise
     
     save_signals(news)
+    save_internships(internships)
 
     return {"news": news, "internships": internships}
