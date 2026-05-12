@@ -43,3 +43,5 @@ next-env.d.ts
 # ========================
 .DS_Store
 *.pemchroma_db/
+
+backend/chroma_db/

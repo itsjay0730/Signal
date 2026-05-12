@@ -64,10 +64,22 @@ def groupDuplicates(news, threshold: float = 0.77):
             }
         else:
             group_key = matched_key
-            #Similar title found → merge into existing group
-            grouped[matched_key]["sources"].append(item.get("source"))
-            grouped[matched_key]["urls"].append(item.get("url"))
-            grouped[matched_key]["count"] += 1
+
+            if matched_key not in grouped:
+                grouped[matched_key] = {
+                    "id": hash(matched_key),
+                    "title": item["title"],
+                    "sources": [item.get("source")],
+                    "urls": [item.get("url")],
+                    "count": 1,
+                    "category": item.get("category"),
+                    "fetched_at": item.get("fetched_at"),
+                    "embedding": embedding
+                }
+            else:
+                grouped[matched_key]["sources"].append(item.get("source"))
+                grouped[matched_key]["urls"].append(item.get("url"))
+                grouped[matched_key]["count"] += 1
 
         storeTitleEmbedding(item, title, embedding, group_key)
 
