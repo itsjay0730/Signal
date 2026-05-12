@@ -17,8 +17,8 @@ def querySimilarTitle(embedding, threshold: float = 0.77):
 
     #find the most similar saved title to this new title embedding
     results = collection.query(
-        queryEmbeddings=[embedding],
-        nRes=1
+        query_embeddings=[embedding],
+        n_results=1
     )
 
     # if not results["ids"] or not results["ids"][0]:
