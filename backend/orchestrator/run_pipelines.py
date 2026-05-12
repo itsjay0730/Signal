@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 #Uses thread executor to concurrently
-#call both pipelines 
+#call both pipelines and save them in supabase
 def run_all_pipelines():
     with ThreadPoolExecutor() as executor:
         newsThread = executor.submit(run_news_pipeline)
