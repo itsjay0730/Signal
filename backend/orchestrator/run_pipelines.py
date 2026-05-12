@@ -1,6 +1,6 @@
 from pipelines.news.news_pipeline import run_news_pipeline
 from pipelines.internships.internship_pipeline import run_internship_pipeline
-from database.db import save_signals
+from database.db import save_signals, save_internships
 from concurrent.futures import ThreadPoolExecutor
 
 
