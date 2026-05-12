@@ -41,7 +41,7 @@ def groupDuplicates(news, threshold: float = 0.77):
     grouped = {}
 
     for item in news:
-         if not title:
+        if not title:
             continue
          
         title = normalize(item.get("title", ""))
@@ -80,20 +80,3 @@ def groupDuplicates(news, threshold: float = 0.77):
 
     return list(grouped.values())
 
-# Flow
-
-# Article comes in
-# ↓
-# Normalize title
-# ↓
-# Create embedding
-# ↓
-# Ask Chroma: “seen something similar?”
-# ↓
-# If yes → use returned group_key and merge
-# ↓
-# If no → create new group_key
-# ↓
-# Store article embedding + metadata in Chroma
-# ↓
-# Return clean grouped signals
