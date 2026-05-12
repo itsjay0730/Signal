@@ -42,7 +42,7 @@ def storeTitleEmbedding(item, title: str, embedding, group_key: str):
         ids=[signalId],
         embeddings=[embedding],
         documents=[title],
-        metaDatas=[{
+        metadatas=[{
             "group_key": group_key,
             "title": item.get("title", ""),
             "source": item.get("source", ""),
