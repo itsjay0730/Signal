@@ -41,11 +41,11 @@ def groupDuplicates(news, threshold: float = 0.77):
     grouped = {}
 
     for item in news:
-        if not title:
-            continue
-         
         title = normalize(item.get("title", ""))
 
+        if not title:
+            continue
+        
         embedding = getEmbedding(title)
         matched_key = querySimilarTitle(embedding, threshold)
 
