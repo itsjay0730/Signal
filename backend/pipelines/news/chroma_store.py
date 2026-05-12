@@ -21,14 +21,13 @@ def querySimilarTitle(embedding, threshold: float = 0.77):
         n_results=1
     )
 
-    # if not results["ids"] or not results["ids"][0]:
-    #     return None
+    if not results["ids"] or not results["ids"][0]:
+        return None
 
     # get closest match distance and metadata
     distance = results["distances"][0][0]
     metaData = results["metadatas"][0][0]
 
-    #cosine distance (lower = closer) into similarity (higher = more similar)
     similarity = 1 - distance
 
     if similarity >= threshold:
