@@ -12,3 +12,7 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 def save_signals(signals: list):
     response = supabase.table("signals").insert(signals).execute()
     return response
+
+def save_internships(internships: list):
+    response = supabase.table("internships").insert(internships).execute()
+    return response
