@@ -15,4 +15,8 @@ def get_signals():
     signals = get_all_signals()
     return {"signals": signals}
 
+@router.get("/internships")
+def get_internships():
+    internships = get_all_internships()
+    return {"internships": internships}
 
