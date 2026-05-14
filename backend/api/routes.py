@@ -1,6 +1,5 @@
 from fastapi import APIRouter
-from database.db import get_all_signals
-from database.db import get_all_internships
+from database.db import get_all_signals, get_all_internships
 
 router = APIRouter()
 
