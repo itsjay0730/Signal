@@ -27,7 +27,12 @@ def save_internships(internships: list):
     response = supabase.table("internships").upsert(internships).execute()
     return response
 
-# get all signals
+#get all signals
 def get_all_signals():
     response = supabase.table("signals").select("*").order("score", desc=True).execute()
+    return response.data
+
+#get all internships
+def get_all_internships():
+    response = supabase.table("internships").select("*").execute()
     return response.data
