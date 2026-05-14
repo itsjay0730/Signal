@@ -1,5 +1,7 @@
 from fastapi import APIRouter
-from pipelines.news.fetch_news import fetch_news
+from database.db import get_all_signals
+from database.db import get_all_internships
+
 router = APIRouter()
 
 # Root route
@@ -10,4 +12,7 @@ def root():
 #future endpoint for the frontend
 @router.get("/signals")
 def get_signals():
-    return {"signals": []}
+    signals = get_all_signals()
+    return {"signals": signals}
+
+
